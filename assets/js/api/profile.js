@@ -1,4 +1,4 @@
-import {fetchOptions } from './config.js';
+import {fetchOptions, pythonURI } from './config.js';
 
 
 
@@ -96,4 +96,41 @@ export function deleteData(options)  {
             console.log('Possible CORS or Service Down error: ' + error);
             
         });
-}
+
+    }
+export async function logoutUser() {
+        const URL = pythonURI + '/api/authenticate'; // Adjusted endpoint for logout
+        
+         const options = {
+                ...fetchOptions,
+                method: 'DELETE',
+            };
+         
+         
+            console.log('Logout clicked');
+         
+         
+        try {
+                const response = await fetch(URL, options);
+                if (response.ok) {
+                    window.location.href = "/portfolio_2025/login"; // Redirect to login page
+                } else {
+                    const errorMessage = await response.text();
+                    console.error('Logout failed:', errorMessage);
+                    // Optionally display an error message to the user
+                }
+            } catch (error) {
+                console.error('Error during logout:', error.message);
+                // Optionally display an error message to the user
+            }
+         }
+
+// session
+// asynchronous session response
+//session call api----?
+// then--> javascript promise
+// data loaded
+// screen establishes 5 different sessions
+// talk about play
+// iteration style ----> little pieces
+// Your teacher likes to iterate -->

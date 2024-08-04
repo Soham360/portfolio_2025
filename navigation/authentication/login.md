@@ -1,5 +1,5 @@
 ---
-layout: post 
+layout: page 
 title: Login
 permalink: /login
 search_exclude: true
@@ -74,7 +74,7 @@ show_reading_time: false
         <form id="signupForm" onsubmit="signup(); return false;">
             <p>
                 <label>
-                    First Name:
+                    Name:
                     <input type="text" name="name" id="name" required>
                 </label>
             </p>
